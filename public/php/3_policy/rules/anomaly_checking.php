@@ -142,10 +142,10 @@ if ($_SERVER['REQUEST_METHOD'] != 'GET') {
 		for ($j = $i + 1; $j < count($table); $j++) {
 			$result = check_rules($table[$i], $table[$j]);
 			if ($result["anomaly"] == "shading" or $result["anomaly"] == "redundancy") {
-				if ($result["problem_rule"] == $table[$i]->getNumber())
-					$other_rule = $table[$j]->getNumber();
+				if ($result["problem_rule"] == $table[$i]->number)
+					$other_rule = $table[$j]->number;
 				else
-					$other_rule = $table[$i]->getNumber();
+					$other_rule = $table[$i]->number;
 				
 				array_push($anomalies, [
 					"anomaly" => $result["anomaly"],
@@ -155,9 +155,10 @@ if ($_SERVER['REQUEST_METHOD'] != 'GET') {
 			}
 			if ($result["anomaly"] == "merge") {
 				array_push($anomalies, [
-					"rule1" => $table[$i]->getNumber(),
-					"rule2" => $table[$j]->getNumber(),
-					"anomaly" => $result["anomaly"]
+					"anomaly" => "merge",
+					"rule1" => $table[$i]->number,
+					"rule2" => $table[$j]->number,
+					"field" => $result["field"]
 				]);
 			}
 		}
@@ -188,7 +189,7 @@ function getMaskLength($mask) {
 
 function getPorts($ports) {
 	if ($ports == "any")
-		return [0, MAX_PORT_VALUE];
+		return [0, MAX_PORT];
 	
 	$parts = explode("-", $ports);
 	if (count($parts) == 1)

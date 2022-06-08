@@ -92,6 +92,7 @@ export default {
 			this.checkForAnomalies(true)
 		},
 		checkForAnomalies(silenceMode = false) {
+			this.$toast.removeAllGroups()
 			this.getRequest("/php/3_policy/rules/anomaly_checking.php")
 				.then(async response => {
 					if (response.status == 200) {
@@ -126,7 +127,9 @@ export default {
 									this.$toast.add({
 										severity: "warn",
 										detail: t("policy_rules.rules_can_be_merged", {
-											rule1: result.anomalies[i].rule1, rule2: result.anomalies[i].rule2
+											rule1: result.anomalies[i].rule1,
+											rule2: result.anomalies[i].rule2,
+											field: t("policy_rules." + result.anomalies[i].field)
 										})
 									})
 								}

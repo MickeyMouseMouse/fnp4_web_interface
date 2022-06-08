@@ -205,7 +205,7 @@
 		"redundancy": "Избыточность",
 		"rule_shading": "Правило {rule1} затенено правилом {rule2}",
 		"rule_redundancy": "Правило {rule1} избыточно, потому что существует правило {rule2}",
-		"rules_can_be_merged": "Правила {rule1} и {rule2} могут быть объединены"
+		"rules_can_be_merged": "Правила {rule1} и {rule2} могут быть объединены ({field})"
 	},
 	"general_rule_wizard_panel": {
 		"rule_attributes": "Атрибуты правила",

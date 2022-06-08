@@ -79,9 +79,9 @@ export default {
 				t("policy_rules.goto"), t("policy_rules.deny")],
 			gotoNumber: 1,
 			activityToggle: true,
-			packetsToggle: true,
-			sessionsToggle: true,
-			alarmToggle: true,
+			packetsToggle: false,
+			sessionsToggle: false,
+			alarmToggle: false,
 			protocol: "any",
 			protocols: ["any", "tcp", "udp"],
 			comment: ""

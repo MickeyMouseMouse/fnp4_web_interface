@@ -205,7 +205,7 @@
 		"redundancy": "Redundancy",
 		"rule_shading": "Rule {rule1} is overshadowed by rule {rule2}",
 		"rule_redundancy": "Rule {rule1} is redundant because rule {rule2} exists",
-		"rules_can_be_merged": "Rules {rule1} and {rule2} can be merged"
+		"rules_can_be_merged": "Rules {rule1} and {rule2} can be merged ({field})"
 	},
 	"general_rule_wizard_panel": {
 		"rule_attributes": "Rule attributes",
